@@ -1,0 +1,28 @@
+#create table for air resistance models
+import math
+from tabulate import tabulate
+
+time = [0,2,4,6,8,10,100,150,200,250,1000]
+kl = 1
+kq = .01
+g = 9.815
+m = 10
+vnr = 0
+vlm = 0
+vlq = 0
+out = []
+
+#print "Time\t |No Resistance\t |Linear Model\t |Quadratic Model\n"
+for t in range(0,1000):
+	nr = g*t + vnr
+	lm = (m*g/kl) + (vlm*math.exp(-kl*t/m))/(m*g)
+	lq = math.sqrt(m*g/kq)*(-1-((vlq*math.sqrt(kq)+math.sqrt(m*g))/(vlq - math.sqrt(m*g))*math.exp((2*g*math.sqrt(kq)*t)/(math.sqrt(m*g)))))/(1-((vlq*math.sqrt(kq)+math.sqrt(m*g))/(vlq - math.sqrt(m*g))*math.exp((2*g*math.sqrt(kq)*t)/(math.sqrt(m*g)))))
+	vnr = nr
+	vlm = lm
+	vlq = lq
+	row = [t,nr,lm,lq]
+	out.append(row)
+#	print t,'\t |',nr,'\t |',lm,'\t |',lq,'\n'
+row = ["inf","inf",(m*g/kl),(math.sqrt(m*g/kq))]
+out.append(row)
+print tabulate(out,headers=["Time","No Resistance","Linear Model","Quadratic Model"],tablefmt="grid")

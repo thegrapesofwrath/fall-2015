@@ -1,0 +1,77 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[cancel}
+\author{Shawn Hartley}
+\begin{document}
+\begin{equation}
+F = ma
+\end{equation}
+\begin{equation}
+a = \dfrac{dv}{dt}
+\end{equation}
+\[\begin{align}
+
+
+F_{\textbf{gravity towards center of planet}} = -m\cdot g\\
+
+F_{\textbf{resisting gravity}} = m\cdot g\\
+
+F_{\textbf{resisting gravity}} = m\cdot g \propto v^{2}\\
+
+F_{\textbf{resisting gravity}} = m\cdot g = k\cdot v^{2}\\
+
+\sum Forces = F_{\textbf{resisting gravity}} + F_{\textbf{resisting gravity}}\\
+
+\sum Forces = k\cdot v^{2} - m\cdot g\\
+
+m\cdot \dfrac{dv}{dt} = k\cdot v^{2} - m\cdot g\\
+
+\int \dfrac{m}{m\cdot g-k\cdot v^{2}}dv = \int dt\\
+
+\dfrac{-\ln\left(\dfrac{\sqrt{k}\cdot v - \sqrt{m\cdot g}}{\sqrt{k}\cdot v + \sqrt{m\cdot g}}\right)}{2\sqrt{m\cdot g\cdot k}} = t + c\\
+
+-\ln \dfrac{\sqrt{k}\cdot v - \sqrt{m\cdot g}}{\sqrt{k}\cdot v + \sqrt{m\cdot g}} = 2\cdot t\sqrt{m\cdot g\cdot k} + c \\
+
+\textit{e}^{-\ln \dfrac{\sqrt{k}\cdot v - \sqrt{m\cdot g}}{\sqrt{k}\cdot v + \sqrt{m\cdot g}}} = \textit{e}^{2\cdot t\sqrt{m\cdot g\cdot k} + c}\\
+
+\left(\dfrac{\sqrt{k}\cdot v - \sqrt{m\cdot g}}{\sqrt{k}\cdot v + \sqrt{m\cdot g}}\right)^{-1} = \textit{e}^{2\cdot t\sqrt{m\cdot g\cdot k}} \textit{e}^{c}\\
+
+\dfrac{\sqrt{k}\cdot v + \sqrt{m\cdot g}}{\sqrt{k}\cdot v - \sqrt{m\cdot g}} = c\cdot \textit{e}^{2\cdot t\sqrt{m\cdot g\cdot k}}\\
+
+\sqrt{k}\cdot v + \sqrt{m\cdot g} = c\textit{e}^{2\cdot t\sqrt{m\cdot g\cdot k}}(\sqrt{k}\cdot v - \sqrt{m\cdot g})\\
+
+\sqrt{k}\cdot v + \sqrt{m\cdot g} = \sqrt{k}\cdot v\cdot c\cdot \textit{e}^{2\cdot t\sqrt{m\cdot g\cdot k}} - \sqrt{m\cdot g}\cdot c\cdot \textit{e}^{2\cdot t\sqrt{m\cdot g\cdot k}}\\
+
+\sqrt{k}\cdot v - \sqrt{k}\cdot v\cdot c\cdot \textit{e}^{2\cdot t\sqrt{m\cdot g\cdot k}} = -\sqrt{m\cdot g}\cdot c \cdot \textit{e}^{2\cdot t\sqrt{m\cdot g\cdot k}} -\sqrt{m\cdot g}\\
+
+v\cdot(\sqrt{k} - \sqrt{k}\cdot c\cdot \textit{e}^{2\cdot t\sqrt{m\cdot g\cdot k}}) = -\sqrt{m\cdot g}\cdot c \cdot \textit{e}^{2\cdot t\sqrt{m\cdot g\cdot k}} -\sqrt{m\cdot g}\\
+
+v = \dfrac{-\sqrt{m\cdot g}\cdot c \cdot \textit{e}^{2\cdot t\sqrt{m\cdot g\cdot k}} -\sqrt{m\cdot g}}{\sqrt{k} - \sqrt{k}\cdot c\cdot \textit{e}^{2\cdot t\sqrt{m\cdot g\cdot k}}}\\
+\end{align}
+\]
+
+Since the object was released from rest, the initial velocity at $t = 0$ is $v = 0$. Therefore we can easily solve for c.
+
+\[
+\texttt{At $t = 0$ and $v = 0$}\\
+
+0 = \dfrac{-c\cdot \sqrt{m\cdot g}\cdot \textit{e}^{2\cdot t\sqrt{m\cdot g\cdot k}} - \sqrt{m\cdot g}}{\sqrt{k}-\sqrt{k}\cdot c}\\
+
+\rightarrow \hspace{5 mm} \dfrac{-\sqrt{m\cdot g}\cdot(c + 1)}{\sqrt{k}\cdot (1-c)}\\
+
+\rightarrow \hspace{5 mm} c = -1\\
+
+\texttt{So}\\
+
+v = \dfrac{\sqrt{m\cdot g}\cdot \textit{e}^{2\cdot t\sqrt{m\cdot g\cdot k}} -\sqrt{m\cdot g}}{\sqrt{k} + \sqrt{k}\cdot \textit{e}^{2\cdot t\sqrt{m\cdot g\cdot k}}}\\
+
+v = \dfrac{\sqrt{m \cdot g}\cdot (\textit{e}^{2\cdot t\sqrt{m\cdot g\cdot k}} - 1)}{\sqrt{k}\cdot (1 + \textit{e}^{2\cdot t\sqrt{m\cdot g\cdot k}})}
+
+\lim_{t\to\infty} \dfrac{\sqrt{m \cdot g}\cdot (\textit{e}^{2\cdot t\sqrt{m\cdot g\cdot k}} - 1)}{\sqrt{k}\cdot (1 + \textit{e}^{2\cdot t\sqrt{m\cdot g\cdot k}})} = \dfrac{\sqrt{m\cdot g}\cdot \infty}{\sqrt{k}\cdot \infty}\\
+\]
+
+$\therefore \hspace{5 mm}$ As $t\to\infty$ \hspace{5 mm} $v\to \dfrac{\sqrt{mg}}{\sqrt{k}}$.
+\end{document}
